@@ -27,7 +27,7 @@ const Cell = ({
 }: Props) => {
   return (
     <div
-      key={`${posX}-${posY}`}
+      key={`cell${posX}-${posY}`}
       onClick={() => (onClick || noop({}))(posX, posY, ratio, value)}
       style={{
         border: '1px solid #fff',
