@@ -14,5 +14,5 @@ export default function YLabelAligner({
   const style = {
     [isXLabelReverse ? 'marginBottom' : 'marginTop']: `${xLabelHeight}px`
   }
-  return <div style={style}>{children}</div>
+  return <div id='aligner' style={style}>{children}</div>
 }
