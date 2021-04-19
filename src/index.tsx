@@ -20,6 +20,7 @@ interface Props {
   cellStyle?: (x: number, y: number, ratio: number, value: number) => {}
   cellRender?: (x: number, y: number, ratio: number, value: number) => {}
   onClick?: (x: number, y: number, ratio: number, value: number) => void
+  headerHeight:number
 }
 
 function getMinMax(data: number[][]): [number, number] {
@@ -41,9 +42,10 @@ export const HeatMapGrid = ({
   yLabelsStyle,
   cellStyle,
   cellRender,
-  onClick
+  onClick,
+  headerHeight,
 }: Props) => {
-  const [xLabelHeight, xLabelRef] = useElemetHeight(22)
+  const [xLabelHeight, xLabelRef] = useElemetHeight(headerHeight)
   const [min, max] = getMinMax(data)
   const minMaxDiff = max - min
   const isXLabelReverse = xLabelsPos === 'bottom'
