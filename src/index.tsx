@@ -43,6 +43,7 @@ export const HeatMapGrid = ({
   cellStyle,
   cellRender,
   onClick,
+  headerHeight,
 }: Props) => {
   const [xLabelHeight, xLabelRef] = useElemetHeight(22)
   const [min, max] = getMinMax(data)
@@ -54,7 +55,7 @@ export const HeatMapGrid = ({
     <Row reverse={isYLabelReverse}>
       {yLabels && (
         <YLabelAligner
-          xLabelHeight={xLabelHeight}
+          xLabelHeight={headerHeight}
           isXLabelReverse={isXLabelReverse}
         >
           <YLabels
