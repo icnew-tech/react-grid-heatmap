@@ -50,8 +50,9 @@ export const HeatMapGrid = ({
   const minMaxDiff = max - min
   const isXLabelReverse = xLabelsPos === 'bottom'
   const isYLabelReverse = yLabelsPos === 'right'
-  console.log("External HeaderHeight: " + headerHeight)
-  console.log("Calculated HeaderHeight: " + xLabelHeight)
+  xLabelHeight
+  // console.log("External HeaderHeight: " + headerHeight)
+  // console.log("Calculated HeaderHeight: " + xLabelHeight)
   return (
     <Row reverse={isYLabelReverse}>
       {yLabels && (
