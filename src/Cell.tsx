@@ -1,15 +1,15 @@
 import React from 'react'
 
 interface Props {
-  render?: (x: number, y: number, ratio: number) => {}
+  render?: (x: number, y: number, ratio: number, value: number) => {}
   posX: number
   posY: number
-  style?: (x: number, y: number, ratio: number) => {}
+  style?: (x: number, y: number, ratio: number, value: number) => {}
   ratio: number
   value: number
   height?: string
   square?: boolean
-  onClick?: (x: number, y: number) => void
+  onClick?: (x: number, y: number, ratio:number, value: number) => void
 }
 
 const noop = (returnVal: any) => () => returnVal
@@ -27,7 +27,7 @@ const Cell = ({
 }: Props) => {
   return (
     <div
-      onClick={() => (onClick || noop({}))(posX, posY)}
+      onClick={() => (onClick || noop({}))(posX, posY, ratio, value)}
       style={{
         border: '1px solid #fff',
         borderWidth: '1px 1px 0 0',
@@ -44,10 +44,10 @@ const Cell = ({
         fontSize: '.8rem',
         cursor: onClick ? 'pointer' : 'initial',
         background: `rgb(12, 160, 44, ${ratio + 0.05})`,
-        ...style(posX, posY, ratio)
+        ...style(posX, posY, ratio,value)
       }}
     >
-      {render(posX, posY, value)}
+      {render(posX, posY, ratio, value)}
     </div>
   )
 }
