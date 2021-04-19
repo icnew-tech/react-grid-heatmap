@@ -23,7 +23,7 @@ export default function YLabels({
     >
       {labels.map((label, index) => (
         <div
-          key={label}
+          key={'y'+index}
           style={{
             boxSizing: 'border-box',
             padding: '0 0.2rem',
