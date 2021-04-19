@@ -55,7 +55,7 @@ export const HeatMapGrid = ({
     <Row reverse={isYLabelReverse}>
       {yLabels && (
         <YLabelAligner
-          xLabelHeight={xLabelHeight}
+          xLabelHeight={headerHeight}
           isXLabelReverse={isXLabelReverse}
         >
           <YLabels
