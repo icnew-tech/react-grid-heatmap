@@ -13,6 +13,7 @@ export default function Column({
 }: Props) {
   return (
     <div
+    
       style={{
         display: 'flex',
         flexDirection: reverse ? 'column-reverse' : 'column',

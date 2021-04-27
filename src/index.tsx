@@ -25,6 +25,8 @@ interface Props {
 
 function getMinMax(data: number[][]): [number, number] {
   const flatArray = data.reduce((i, o) => [...o, ...i], [])
+  console.log("FlatArray:")
+  console.log(flatArray)
   const max = Math.max(...flatArray)
   const min = Math.min(...flatArray)
   return [min, max]
@@ -81,10 +83,10 @@ export const HeatMapGrid = ({
         </div>
         <Column>
           {data.map((rowItems, xi) => (
-            <Row key={xi}>
+            <Row >
               {rowItems.map((value, yi) => (
                 <Cell
-                  key={`${xi}-${yi}`}
+                  key={`crc${xi}-${yi}`}
                   posX={xi}
                   posY={yi}
                   onClick={onClick}
