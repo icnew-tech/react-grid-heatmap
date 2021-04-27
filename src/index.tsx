@@ -27,7 +27,7 @@ function getMinMax(data: number[][]): [number, number] {
   const flatArray = data.reduce((i, o) => [...o, ...i], [])
   //first row is metadadata, not to be used for min and max
   const oneRow:number =data.length;
-  const filteredArray = flatArray.slice(0,oneRow);
+  const filteredArray = flatArray.slice(0,(flatArray.length - oneRow));
   const max = Math.max(...filteredArray)
   const min = Math.min(...filteredArray)
   return [min, max]
